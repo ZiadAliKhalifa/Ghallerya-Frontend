@@ -11,8 +11,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - cd ./build
-      - aws s3 sync . s3://$S3_BUCKET --delete
+      - aws s3 sync ./build s3://$S3_BUCKET --delete
 artifacts:
   files:
     - "build/*"
