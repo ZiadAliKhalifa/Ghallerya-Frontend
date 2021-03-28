@@ -11,9 +11,8 @@ phases:
       - npm run build
       - echo Contents of where the build occured
       - ls -lart
-      - cd build
       - echo Contents of build
-      - ls -lart
+      - ls -lart build
 artifacts:
   files:
     - "**/*"
