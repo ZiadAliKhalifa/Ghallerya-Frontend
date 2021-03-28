@@ -15,7 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:ci": "npm run test",
+    "test:ci": "CI=true npm run test a",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
