@@ -12,8 +12,10 @@ phases:
   post_build:
     commands:
       - cd build
+      - pwd
+      - ls -lart
       - aws s3 sync . s3://$S3_BUCKET --delete
 artifacts:
   files:
-    - "**/*"
-  base-directory: "build"
+    - "build/*"
+  base-directory: "."
