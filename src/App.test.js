@@ -6,3 +6,8 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('Mock test to check CICD', () => {
+  const x = 1;
+  expect(x).toBe(1);
+});
