@@ -1,0 +1,19 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install
+  pre_build:
+    commands:
+      - npm run test:ci
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - cd build
+      - aws s3 sync . s3://$S3_BUCKET --delete
+artifacts:
+  files:
+    - "**/*"
+  base-directory: "build"
