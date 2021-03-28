@@ -9,11 +9,8 @@ phases:
   build:
     commands:
       - npm run build
-      - echo Contents of where the build occured
-      - ls -lart
-      - echo Contents of build
-      - ls -lart build
+
 artifacts:
   files:
-    - "**/*"
-  base-directory: "build"
+    - "build/*"
+  base-directory: "."
