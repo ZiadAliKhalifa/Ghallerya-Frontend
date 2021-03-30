@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hi, this is Hedwig!</p>
+        <p>Hi, this is Hedwig in TS!</p>
       </header>
     </div>
   );
