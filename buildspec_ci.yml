@@ -1,4 +1,7 @@
 version: 0.1
+secrets-manager:
+  REACT_APP_AUTH0_DOMAIN: "hedwig/dev:REACT_APP_AUTH0_DOMAIN"
+  REACT_APP_AUTH0_CLIENT_ID: "hedwig/dev:REACT_APP_AUTH0_CLIENT_ID"
 phases:
   install:
     commands:
