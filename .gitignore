@@ -38,4 +38,7 @@ psd
 thumb
 sketch
 
+#env
+.env*
+
 
