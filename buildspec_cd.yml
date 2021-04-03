@@ -1,7 +1,8 @@
 version: 0.1
-secrets-manager:
-  REACT_APP_AUTH0_DOMAIN: "hedwig/dev:REACT_APP_AUTH0_DOMAIN"
-  REACT_APP_AUTH0_CLIENT_ID: "hedwig/dev:REACT_APP_AUTH0_CLIENT_ID"
+env:
+  secrets-manager:
+    REACT_APP_AUTH0_DOMAIN: "arn:aws:secretsmanager:us-east-1:703272952572:secret:hedwig/dev-n5el2b:REACT_APP_AUTH0_DOMAIN"
+    REACT_APP_AUTH0_CLIENT_ID: "arn:aws:secretsmanager:us-east-1:703272952572:secret:hedwig/dev-n5el2b:REACT_APP_AUTH0_CLIENT_ID"
 phases:
   install:
     commands:
