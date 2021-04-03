@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "env-cmd -f .env.development react-scripts build",
+    "build": "sh -ac '. .env.development; react-scripts build'",
     "test": "react-scripts test",
     "test:ci": "CI=true npm test a"
   },

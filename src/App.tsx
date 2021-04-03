@@ -15,6 +15,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hi, this is Hedwig in TS!</p>
+        <p>You are on the {process.env.NODE_ENV} environment</p>
         {isAuthenticated && (<p>You are authenticated as: {user.name}!</p>)}
         {!isAuthenticated && (<p>You are not authenticated.</p>)}
         <LoginButton />
