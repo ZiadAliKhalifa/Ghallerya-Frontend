@@ -6,7 +6,6 @@ import './App.css';
 import LoginButton from "./Auth/LoginButton"
 import LogoutButton from "./Auth/LogoutButton"
 
-
 function App() {
   const { user, isAuthenticated } = useAuth0();
 
