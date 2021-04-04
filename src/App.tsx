@@ -3,8 +3,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import logo from './logo.svg';
 import './App.css';
-import LoginButton from "./Auth/LoginButton"
-import LogoutButton from "./Auth/LogoutButton"
+import LoginButton from "./components/Auth/LoginButton"
+import LogoutButton from "./components/Auth/LogoutButton"
+import SetUserInRedux from "./components/Auth/SetUserInRedux"
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
@@ -19,6 +20,7 @@ function App() {
         {!isAuthenticated && (<p>You are not authenticated.</p>)}
         <LoginButton />
         <LogoutButton />
+        <SetUserInRedux />
       </header>
     </div>
   );
