@@ -8,9 +8,10 @@ import { AppActionType } from "../../redux/state";
 import { AppState } from "../../redux";
 
 interface SetUserInReduxProps {
-
+    //Place any props that are passed to this component from outside here.
 }
 
+// A type that is a mash-up of all types that end up in the props
 type Props = SetUserInReduxProps & LinkStateProps & LinkDispatchProps;
 
 const SetUserInRedux = ({ currentUser, setUser }: Props) => {
@@ -37,14 +38,18 @@ const SetUserInRedux = ({ currentUser, setUser }: Props) => {
     return <button onClick={saveUser}>Set User</button>;
 }
 
+// Interface for the return of mapStateToProps
 interface LinkStateProps {
     currentUser: User;
 }
 
+// Interface for the return of MapDispatchToProps
 interface LinkDispatchProps {
     setUser: (user: User) => void;
 }
 
+// The function takes the state and the props
+// Returns items that follow the LinkStateProps interface
 const mapStateToProps = (
     state: AppState,
     ownProps: SetUserInReduxProps
@@ -52,10 +57,12 @@ const mapStateToProps = (
     currentUser: state.user
 });
 
+// The function takes the dispatch ability and the props
+// Returns items that follow the LinkDispatchProps interface
 const mapDispatchToProps = (
     dispatch: Dispatch<AppActionType>,
     ownProps: SetUserInReduxProps
-) => ({
+): LinkDispatchProps => ({
     setUser: (user: User) => dispatch(setUser(user))
 });
 

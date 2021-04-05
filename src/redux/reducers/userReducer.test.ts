@@ -51,8 +51,4 @@ describe('Users Reducer', () => {
         const reducer = userReducer(undefined, { type: UserActionTypes.SET_USER, payload: test_user });
         expect(reducer).toEqual(test_user);
     });
-
-
-
-
 });
