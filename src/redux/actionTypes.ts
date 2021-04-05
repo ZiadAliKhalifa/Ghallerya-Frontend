@@ -1,1 +1,3 @@
-export const SET_USER = "SET_USER"
+export enum UserActionTypes {
+    SET_USER = "@User/SET_USER"
+}
