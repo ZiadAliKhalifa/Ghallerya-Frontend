@@ -1,11 +1,19 @@
 import React from "react"
 import { useAuth0 } from "@auth0/auth0-react";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
 
-import { setUser } from "../../redux/actionCreators"
+import { setUser } from "../../redux/actions/userActions"
+import { AppActionType } from "../../redux/state";
+import { AppState } from "../../redux";
 
+interface SetUserInReduxProps {
 
+}
 
-const SetUserInRedux: React.FC = () => {
+type Props = SetUserInReduxProps & LinkStateProps & LinkDispatchProps;
+
+const SetUserInRedux = ({ currentUser, setUser }: Props) => {
     const { user, isAuthenticated } = useAuth0();
 
     const saveUser = () => {
@@ -28,8 +36,31 @@ const SetUserInRedux: React.FC = () => {
     }
 
     return <button onClick={saveUser}>Set User</button>;
-
 }
 
-// TODO: Connect component rather than calling a function that has dispatch ability
-export default SetUserInRedux;
+interface LinkStateProps {
+    currentUser: User;
+}
+
+interface LinkDispatchProps {
+    setUser: (user: User) => void;
+}
+
+const mapStateToProps = (
+    state: AppState,
+    ownProps: SetUserInReduxProps
+): LinkStateProps => ({
+    currentUser: state.user
+});
+
+const mapDispatchToProps = (
+    dispatch: Dispatch<AppActionType>,
+    ownProps: SetUserInReduxProps
+) => ({
+    setUser: (user: User) => dispatch(setUser(user))
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SetUserInRedux);
