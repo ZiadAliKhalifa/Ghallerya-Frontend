@@ -30,7 +30,6 @@ const SetUserInRedux = ({ currentUser, setUser }: Props) => {
                 sub: user.sub,
                 updated_at: user.updated_at,
             }
-
             setUser(newUser);
         }
     }
