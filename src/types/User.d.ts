@@ -1,4 +1,4 @@
-interface IUser {
+type User = {
     email: string
     email_verified: boolean
     family_name: string
@@ -10,14 +10,3 @@ interface IUser {
     sub: string
     updated_at: string
 }
-
-type UserState = {
-    user: IUser
-}
-
-type UserAction = {
-    type: string
-    user: IUser
-}
-
-type DispatchType = (args: UserAction) => UserAction

@@ -1,7 +1,9 @@
-import { createStore, applyMiddleware, Store, compose } from "redux"
-import thunk from "redux-thunk"
+import { AppState } from "@auth0/auth0-react";
+import { createStore, applyMiddleware, compose } from "redux"
+import thunk, { ThunkMiddleware } from "redux-thunk"
 
-import reducer from "./reducer"
+import rootReducer from "./index"
+import { AppActionType } from "./state";
 
 declare global {
     interface Window {
@@ -9,8 +11,8 @@ declare global {
     }
 }
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-export const store: Store<UserState, UserAction> & {
-    dispatch: DispatchType
-} = createStore(reducer, applyMiddleware(thunk, composeEnhancers));
+export const store = createStore(rootReducer, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk as ThunkMiddleware<AppState, AppActionType>))
+);

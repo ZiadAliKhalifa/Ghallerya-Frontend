@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.4.0",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
     "@types/jest": "^26.0.22",
     "@types/node": "^12.20.7",
     "@types/react": "^17.0.3",
@@ -46,8 +43,13 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
     "@types/react-redux": "^7.1.16",
     "@types/redux": "^3.6.0",
-    "@types/redux-thunk": "^2.1.0"
+    "@types/redux-mock-store": "^1.0.2",
+    "@types/redux-thunk": "^2.1.0",
+    "redux-mock-store": "^1.5.4"
   }
 }
