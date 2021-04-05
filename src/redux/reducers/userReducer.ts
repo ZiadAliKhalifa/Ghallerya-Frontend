@@ -15,8 +15,8 @@ const initialState: User = {
 
 const reducer = (
     state: User = initialState,
-    action: IUserAction
-) => {
+    action: actionTypes.UserActionType
+): User => {
     switch (action.type) {
         case actionTypes.UserActionTypes.SET_USER:
             const newUser: User = {
@@ -36,8 +36,9 @@ const reducer = (
                 ...state,
                 ...newUser,
             }
+        default:
+            return state;
     }
-    return state
 }
 
 export default reducer
