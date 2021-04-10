@@ -15,14 +15,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Homepage />
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>Hi, this is Hedwig in TS!</p>
         <p>You are on the {process.env.NODE_ENV} environment</p>
         {isAuthenticated && <p>You are authenticated as: {user.name}!</p>}
         {!isAuthenticated && <p>You are not authenticated.</p>}
         <LoginButton />
         <LogoutButton />
-        <SetUserInRedux />
+        <SetUserInRedux /> */}
       </header>
     </div>
   );

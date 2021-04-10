@@ -1,48 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 
 interface NavbarProps {}
 
-const Navbar: React.FC<NavbarProps> = ({}) => {
+const Navbar: React.FC<NavbarProps> = () => {
+  const [scrollState, setScrollState] = useState("top");
+
+  useEffect(() => {
+    // check to see if the page is at the top or scrolled to change navbar styles accordingly
+    const listener: any = document?.addEventListener("scroll", (e) => {
+      const scrolled: undefined | number = document.scrollingElement?.scrollTop;
+      if (scrolled !== undefined && scrolled >= 50) {
+        if (scrollState !== "scrolled") {
+          setScrollState("scrolled");
+        }
+      } else {
+        if (scrollState !== "top") {
+          setScrollState("top");
+        }
+      }
+    });
+    // remove eventlistner on unmount
+    return () => {
+      document.removeEventListener("scroll", listener);
+    };
+  }, [scrollState]);
+
   return (
-    <nav>
-      <div className="logo">Hedwig</div>
-      <ul className="nav-links">
-        <li>FEED</li>
-        <li>AUTHORS</li>
-        <li>EXPLORE</li>
-        <li>BLOG</li>
-        <li>CONTACT</li>
-      </ul>
-      <div className="search-container">
-        <div className="search">
-          <input type="text" placeholder=" " />
-          <div>
-            <svg>
-              <use href="#path" />
-            </svg>
-          </div>
+    <nav className={scrollState === "top" ? "nav" : "nav-scrolled"}>
+      <div
+        className={
+          scrollState === "top" ? "nav-container" : "nav-container-scrolled"
+        }
+      >
+        <div className={scrollState === "top" ? "logo" : "logo-scrolled"}>
+          Ghallerya
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" style={{ display: "none" }}>
-          <symbol
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 160 28"
-            id="path"
+        <div className="nav-links">
+          <a href="#">feed</a>
+          <a href="#">authors</a>
+          <a href="#">explore</a>
+          <a href="#">blog</a>
+          <a href="#">contact</a>
+        </div>
+        <div className="authentication">
+          <a href="#" className="login">
+            Log in
+          </a>
+          <a
+            href="#"
+            className={scrollState === "top" ? "signup" : "signup-scrolled"}
           >
-            <path
-              d="M32.9418651,-20.6880772 C37.9418651,-20.6880772 40.9418651,-16.6880772 40.9418651,-12.6880772 C40.9418651,-8.68807717 37.9418651,-4.68807717 32.9418651,-4.68807717 C27.9418651,-4.68807717 24.9418651,-8.68807717 24.9418651,-12.6880772 C24.9418651,-16.6880772 27.9418651,-20.6880772 32.9418651,-20.6880772 L32.9418651,-29.870624 C32.9418651,-30.3676803 33.3448089,-30.770624 33.8418651,-30.770624 C34.08056,-30.770624 34.3094785,-30.6758029 34.4782612,-30.5070201 L141.371843,76.386562"
-              transform="translate(83.156854, 22.171573) rotate(-225.000000) translate(-83.156854, -22.171573)"
-            ></path>
-          </symbol>
-        </svg>
-      </div>
-      <div className="authentication">
-        <a href="#login">
-          <div className="login">Log in</div>
-        </a>
-        <a href="#" className="signup">
-          <div className="signup-text">Sign Up</div>
-        </a>
+            <div className="signup-text">Sign Up</div>
+          </a>
+        </div>
       </div>
     </nav>
   );
