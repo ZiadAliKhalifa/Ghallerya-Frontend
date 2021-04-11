@@ -41,6 +41,14 @@
     margin: 0px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .megatron img {
+        float: right;
+        transform: translateX(400px);
+        filter: brightness(60%)
+    }
+}
+
 @media only screen and (max-width: 730px) {
     .megatron h1 {
         position: absolute;
