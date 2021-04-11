@@ -1,0 +1,27 @@
+.megatron {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+
+.megatron img {
+    float: right;
+    filter: brightness(60%)
+}
+
+.megatron h1 {
+    position: absolute;
+    top: 288px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: xxx-large;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+}
