@@ -43,6 +43,20 @@
 
 @media only screen and (max-width: 730px) {
     .megatron h1 {
-        display: none;
+        position: absolute;
+        width: 256px;
+        top: 220px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: xxx-large;
+        letter-spacing: 5px;
+        word-spacing: 5px;
+        margin: 0px;
+    }
+    .megatron h4 {
+        width: 70%;
     }
 }
