@@ -15,6 +15,7 @@
 
 .megatron h1 {
     position: absolute;
+    width: 100%;
     top: 288px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -24,4 +25,24 @@
     font-size: xxx-large;
     letter-spacing: 5px;
     word-spacing: 5px;
+    margin: 0px;
+}
+
+.megatron h4 {
+    position: absolute;
+    top: 478px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 300;
+    font-size: medium;
+    font-style: italic;
+    letter-spacing: 2px;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 730px) {
+    .megatron h1 {
+        display: none;
+    }
 }
