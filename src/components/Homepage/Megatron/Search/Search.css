@@ -29,6 +29,7 @@
     padding-left: 34px;
     padding-right: 40px;
     font-size: medium;
+    outline: none;
 }
 
 ::placeholder {
