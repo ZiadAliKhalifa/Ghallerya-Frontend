@@ -9,8 +9,8 @@ body {
   padding: 0;
   font-family: raleway;
   width: 100%;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(Belal-5.jpg); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(Belal-5.jpg);
   background-color: teal;
   background-size: cover;
   background-position: top;

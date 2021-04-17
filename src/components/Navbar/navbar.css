@@ -36,16 +36,20 @@ nav {
   transition: 0.3s ease-in-out;
 }
 
+.nav-container-mobile {
+  display: none;
+}
+
 .logo {
   font-family: raleway, roboto;
-  font-size: 4rem;
+  font-size: 3rem;
   transition: 0.3s ease-in-out;
 }
 
 .logo-scrolled {
   font-family: raleway, roboto;
-  font-size: 3.5rem;
-  padding: 1rem 0rem 1rem 0rem;
+  font-size: 3rem;
+  padding: 1.2rem 0rem 1rem 0rem;
   transition: 0.3s ease-in-out;
 }
 
@@ -119,7 +123,7 @@ nav {
   font-family: raleway, roboto;
   font-weight: 600;
   font-style: italic;
-  margin-right: 4.2rem;
+  margin-right: 2rem;
   text-decoration: none;
   color: white;
 }
@@ -129,15 +133,17 @@ nav {
 }
 
 .signup {
-  width: 11.6rem;
-  height: 4.3rem;
+  width: 8.12rem;
+  height: 3.01rem;
   background-color: #f7ede2;
   color: #f28482;
   border: 2px solid #f28482;
   border-radius: 25px 25px 25px 25px;
   display: flex;
   text-decoration: none;
-  transition: 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+  font-size: 0.2rem;
 }
 
 .signup-scrolled {
@@ -174,45 +180,94 @@ nav {
   font-style: italic;
 }
 
-@media only screen and (min-width: 650px) and (max-width: 1000px) {
-  body {
-    background-color: lightblue;
+@media only screen and (max-width: 800px) {
+  nav,
+  .nav-scrolled {
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    transition: 0s;
   }
 
-  .logo {
-    font-family: raleway, roboto;
-    font-size: 3rem;
-    transition: 0.3s ease-in-out;
+  .nav-container,
+  .nav-container-scrolled {
+    display: none;
   }
 
-  .logo-scrolled {
-    font-family: raleway, roboto;
-    font-size: 3rem;
-    padding: 1.2rem 0rem 1rem 0rem;
-    transition: 0.3s ease-in-out;
-  }
-
-  .signup {
-    width: 8.12rem;
-    height: 3.01rem;
-    background-color: #f7ede2;
-    color: #f28482;
-    border: 2px solid #f28482;
-    border-radius: 25px 25px 25px 25px;
+  .nav-container-mobile {
     display: flex;
-    text-decoration: none;
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
-      border 0.3s ease-in-out;
-    font-size: 0.2rem;
+    color: white;
+    width: 85%;
+    max-width: 100%;
+    margin: auto;
+    /* background-color: rebeccapurple; */
+    justify-content: space-between;
   }
 
-  .login {
-    font-size: 1.2rem;
-    font-family: raleway, roboto;
-    font-weight: 600;
-    font-style: italic;
-    margin-right: 2rem;
+  .logo-mobile {
+    font-size: 3rem;
+    margin-top: 10%;
+    transition: 0.3s ease-in-out;
+  }
+
+  .fa-bars {
+    font-size: 3rem;
+    margin-top: auto;
+  }
+
+  .nav-mobile-menu-closed {
     text-decoration: none;
-    color: white;
+    height: 100vh;
+    width: 34.2rem;
+    position: absolute;
+    top: 0px;
+    right: -100%;
+    right: 0%;
+    max-width: 100%;
+    background-color: #f5f5f5;
+  }
+
+  .fa-times {
+    font-size: 3rem;
+    color: black;
+    margin-top: 10%;
+    margin-left: 85%;
+  }
+
+  .nav-mobile-links {
+    /* background-color: red; */
+    text-align: center;
+    height: 80%;
+    display: flex;
+  }
+
+  .nav-mobile-links > ul {
+    width: 100%;
+    height: 60%;
+    list-style: none;
+    font-size: 2.5rem;
+    padding: 0%;
+    /* background-color: #f28482; */
+    margin: auto;
+  }
+
+  .nav-mobile-links > ul > li {
+    margin-top: 10%;
+  }
+
+  .nav-mobile-links > ul > li > a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+  }
+
+  .nav-mobile-menu-logo {
+    color: black;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    /* background: red; */
+    margin-top: -10%;
   }
 }

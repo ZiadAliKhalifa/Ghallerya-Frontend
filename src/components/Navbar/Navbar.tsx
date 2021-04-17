@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   }, [scrollState]);
 
   return (
-    <nav className={scrollState === "top" ? "nav" : "nav-scrolled"}>
+    <nav className={scrollState === "top" ? "nav " : "nav-scrolled "}>
       <div
         className={
           scrollState === "top" ? "nav-container" : "nav-container-scrolled"
@@ -53,6 +53,33 @@ const Navbar: React.FC<NavbarProps> = () => {
           >
             <div className="signup-text">Sign Up</div>
           </a>
+        </div>
+      </div>
+      <div className="nav-container-mobile">
+        <div className="logo-mobile">Ghallerya</div>
+        <i className="fa fa-bars" aria-hidden="true"></i>
+        <div className="nav-mobile-menu-closed">
+          <i className="fas fa-times"></i>
+          <div className="nav-mobile-links">
+            <ul>
+              <li>
+                <a href="#">feed</a>
+              </li>
+              <li>
+                <a href="#">authors</a>
+              </li>
+              <li>
+                <a href="#">explore</a>
+              </li>
+              <li>
+                <a href="#">blog</a>
+              </li>
+              <li>
+                <a href="#">contact</a>
+              </li>
+            </ul>
+          </div>
+          <div className="nav-mobile-menu-logo">Ghallerya</div>
         </div>
       </div>
     </nav>
