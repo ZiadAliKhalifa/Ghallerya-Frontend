@@ -41,6 +41,14 @@ nav {
   display: none;
 }
 
+.nav-background-container-close {
+  display: none;
+}
+
+.nav-background-container {
+  display: none;
+}
+
 .logo {
   font-family: raleway, roboto;
   font-size: 3rem;
@@ -301,6 +309,7 @@ nav {
     height: 100vh;
     background-color: transparent;
     overflow: hidden;
+    display: block;
   }
 
   .nav-background-container-close {
@@ -311,6 +320,7 @@ nav {
     overflow: hidden;
     visibility: hidden;
     transition-delay: 0.5s;
+    display: block;
   }
 
   .nav-mobile-background {

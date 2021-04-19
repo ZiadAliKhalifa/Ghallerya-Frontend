@@ -6,7 +6,6 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
   const [scrollState, setScrollState] = useState("top");
   const [isHamburgerOpen, setIsHamburgerOpen] = useState("initial");
-  console.log(isHamburgerOpen);
 
   useEffect(() => {
     // check to see if the page is at the top or scrolled to change navbar styles accordingly
@@ -82,19 +81,19 @@ const Navbar: React.FC<NavbarProps> = () => {
         </div>
         <div
           className={
-            isHamburgerOpen == "closed"
+            isHamburgerOpen === "closed"
               ? "nav-background-container"
               : "nav-background-container-close"
           }
         >
           <div
             className={
-              isHamburgerOpen == "closed"
+              isHamburgerOpen === "closed"
                 ? "nav-mobile-background"
                 : "nav-mobile-background-close"
             }
             style={
-              isHamburgerOpen == "initial"
+              isHamburgerOpen === "initial"
                 ? { display: "none" }
                 : { display: "inline-block" }
             }
@@ -104,7 +103,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div
             className="logo-mobile"
             style={
-              isHamburgerOpen == "closed"
+              isHamburgerOpen === "closed"
                 ? { color: "black" }
                 : { color: "white" }
             }
@@ -117,14 +116,14 @@ const Navbar: React.FC<NavbarProps> = () => {
               <div>
                 <span
                   style={
-                    isHamburgerOpen == "closed"
+                    isHamburgerOpen === "closed"
                       ? { backgroundColor: "var(--bar-bg, black)" }
                       : { backgroundColor: "var(--bar-bg, white)" }
                   }
                 ></span>
                 <span
                   style={
-                    isHamburgerOpen == "closed"
+                    isHamburgerOpen === "closed"
                       ? { backgroundColor: "var(--bar-bg, black)" }
                       : { backgroundColor: "var(--bar-bg, white)" }
                   }
@@ -137,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <div
         className="nav-links-container"
         style={
-          isHamburgerOpen == "closed"
+          isHamburgerOpen === "closed"
             ? { display: "block" }
             : { display: "none" }
         }
