@@ -4,20 +4,33 @@ import "./navbar.css";
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
-  const [scrollState, setScrollState] = useState("top");
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState("initial");
+  enum hamburgerState {
+    initial = "initial",
+    closed = "closed",
+    opened = "opened",
+  }
+
+  enum pagePosition {
+    top = "top",
+    scrolled = "scrolled",
+  }
+
+  const [scrollState, setScrollState] = useState(pagePosition.top);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(
+    hamburgerState.initial
+  );
 
   useEffect(() => {
     // check to see if the page is at the top or scrolled to change navbar styles accordingly
     const listener: any = document?.addEventListener("scroll", (e) => {
       const scrolled: undefined | number = document.scrollingElement?.scrollTop;
       if (scrolled !== undefined && scrolled >= 50) {
-        if (scrollState !== "scrolled") {
-          setScrollState("scrolled");
+        if (scrollState !== pagePosition.scrolled) {
+          setScrollState(pagePosition.scrolled);
         }
       } else {
-        if (scrollState !== "top") {
-          setScrollState("top");
+        if (scrollState !== pagePosition.top) {
+          setScrollState(pagePosition.top);
         }
       }
     });
@@ -28,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   }, [scrollState]);
 
   useEffect(() => {
-    if (isHamburgerOpen === "opened") {
+    if (isHamburgerOpen === hamburgerState.opened) {
       document.getElementsByTagName("html")[0].style.overflow = "scroll";
     } else {
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
@@ -37,27 +50,35 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   const hamburgerMenuHandler = () => {
     switch (isHamburgerOpen) {
-      case "initial":
-        setIsHamburgerOpen("closed");
+      case hamburgerState.initial:
+        setIsHamburgerOpen(hamburgerState.closed);
         break;
-      case "opened":
-        setIsHamburgerOpen("closed");
+      case hamburgerState.opened:
+        setIsHamburgerOpen(hamburgerState.closed);
         break;
-      case "closed":
-        setIsHamburgerOpen("opened");
+      case hamburgerState.closed:
+        setIsHamburgerOpen(hamburgerState.opened);
         break;
     }
   };
 
   return (
     <div>
-      <nav className={scrollState === "top" ? "nav " : "nav-scrolled "}>
+      <nav
+        className={scrollState === pagePosition.top ? "nav " : "nav-scrolled "}
+      >
         <div
           className={
-            scrollState === "top" ? "nav-container" : "nav-container-scrolled"
+            scrollState === pagePosition.top
+              ? "nav-container"
+              : "nav-container-scrolled"
           }
         >
-          <div className={scrollState === "top" ? "logo" : "logo-scrolled"}>
+          <div
+            className={
+              scrollState === pagePosition.top ? "logo" : "logo-scrolled"
+            }
+          >
             Ghallerya
           </div>
           <div className="nav-links">
@@ -73,7 +94,9 @@ const Navbar: React.FC<NavbarProps> = () => {
             </a>
             <a
               href="#"
-              className={scrollState === "top" ? "signup" : "signup-scrolled"}
+              className={
+                scrollState === pagePosition.top ? "signup" : "signup-scrolled"
+              }
             >
               <div className="signup-text">Sign Up</div>
             </a>
@@ -81,19 +104,19 @@ const Navbar: React.FC<NavbarProps> = () => {
         </div>
         <div
           className={
-            isHamburgerOpen === "closed"
+            isHamburgerOpen === hamburgerState.closed
               ? "nav-background-container"
               : "nav-background-container-close"
           }
         >
           <div
             className={
-              isHamburgerOpen === "closed"
+              isHamburgerOpen === hamburgerState.closed
                 ? "nav-mobile-background"
                 : "nav-mobile-background-close"
             }
             style={
-              isHamburgerOpen === "initial"
+              isHamburgerOpen === hamburgerState.initial
                 ? { display: "none" }
                 : { display: "inline-block" }
             }
@@ -103,7 +126,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div
             className="logo-mobile"
             style={
-              isHamburgerOpen === "closed"
+              isHamburgerOpen === hamburgerState.closed
                 ? { color: "black" }
                 : { color: "white" }
             }
@@ -116,14 +139,14 @@ const Navbar: React.FC<NavbarProps> = () => {
               <div>
                 <span
                   style={
-                    isHamburgerOpen === "closed"
+                    isHamburgerOpen === hamburgerState.closed
                       ? { backgroundColor: "var(--bar-bg, black)" }
                       : { backgroundColor: "var(--bar-bg, white)" }
                   }
                 ></span>
                 <span
                   style={
-                    isHamburgerOpen === "closed"
+                    isHamburgerOpen === hamburgerState.closed
                       ? { backgroundColor: "var(--bar-bg, black)" }
                       : { backgroundColor: "var(--bar-bg, white)" }
                   }
@@ -136,7 +159,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <div
         className="nav-links-container"
         style={
-          isHamburgerOpen === "closed"
+          isHamburgerOpen === hamburgerState.closed
             ? { display: "block" }
             : { display: "none" }
         }
