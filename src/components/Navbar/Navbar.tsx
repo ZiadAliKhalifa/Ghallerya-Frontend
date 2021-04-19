@@ -19,6 +19,18 @@ const Navbar: React.FC<NavbarProps> = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(
     hamburgerState.initial
   );
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowSize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   useEffect(() => {
     // check to see if the page is at the top or scrolled to change navbar styles accordingly
@@ -38,15 +50,24 @@ const Navbar: React.FC<NavbarProps> = () => {
     return () => {
       document.removeEventListener("scroll", listener);
     };
-  }, [scrollState]);
+  }, [scrollState, pagePosition.top, pagePosition.scrolled]);
 
   useEffect(() => {
-    if (isHamburgerOpen === hamburgerState.opened) {
+    if (
+      isHamburgerOpen === hamburgerState.opened ||
+      isHamburgerOpen === hamburgerState.initial ||
+      windowSize > 800
+    ) {
       document.getElementsByTagName("html")[0].style.overflow = "scroll";
     } else {
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
     }
-  }, [isHamburgerOpen]);
+  }, [
+    isHamburgerOpen,
+    hamburgerState.initial,
+    windowSize,
+    hamburgerState.opened,
+  ]);
 
   const hamburgerMenuHandler = () => {
     switch (isHamburgerOpen) {
@@ -82,18 +103,18 @@ const Navbar: React.FC<NavbarProps> = () => {
             Ghallerya
           </div>
           <div className="nav-links">
-            <a href="#">feed</a>
-            <a href="#">authors</a>
-            <a href="#">explore</a>
-            <a href="#">blog</a>
-            <a href="#">contact</a>
+            <a href="t">feed</a>
+            <a href="t">authors</a>
+            <a href="t">explore</a>
+            <a href="t">blog</a>
+            <a href="t">contact</a>
           </div>
           <div className="authentication">
-            <a href="#" className="login">
+            <a href="t" className="login">
               Log in
             </a>
             <a
-              href="#"
+              href="t"
               className={
                 scrollState === pagePosition.top ? "signup" : "signup-scrolled"
               }
@@ -166,19 +187,19 @@ const Navbar: React.FC<NavbarProps> = () => {
       >
         <ul>
           <li>
-            <a href="#">feed</a>
+            <a href="t">feed</a>
           </li>
           <li>
-            <a href="#">authors</a>
+            <a href="t">authors</a>
           </li>
           <li>
-            <a href="#">explore</a>
+            <a href="t">explore</a>
           </li>
           <li>
-            <a href="#">blog</a>
+            <a href="t">blog</a>
           </li>
           <li>
-            <a href="#">contact</a>
+            <a href="t">contact</a>
           </li>
         </ul>
       </div>
