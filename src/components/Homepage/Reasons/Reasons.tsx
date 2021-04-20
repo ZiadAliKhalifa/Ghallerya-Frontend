@@ -1,6 +1,6 @@
-import photographer from "../../../static/images/photographer.svg"
-import camel from "../../../static/images/camel.svg"
-import payments from "../../../static/images/payments.svg"
+import photographer from "../../../static/images/Homepage/photographer.svg"
+import camel from "../../../static/images/Homepage/camel.svg"
+import payments from "../../../static/images/Homepage/payments.svg"
 import "./Reasons.css"
 
 const Reasons = () => {
