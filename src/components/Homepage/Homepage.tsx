@@ -1,12 +1,14 @@
-import React from "react";
 import Megatron from "./Megatron/Megatron";
 import Navbar from "../Navbar/Navbar";
+import Reasons from "./Reasons/Reasons";
+import "./Homepage.css"
 
 export default function Homepage() {
   return (
-    <div>
+    <div className="homepage">
       <Navbar />
       <Megatron />
+      <Reasons />
       <br />
       <br />
       <br />

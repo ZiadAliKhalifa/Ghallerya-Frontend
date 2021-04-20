@@ -1,7 +1,7 @@
 import React from "react";
 import "./Megatron.css";
 
-import Belal from "./../../../static/images/Belal.png";
+import Belal from "./../../../static/images/Homepage/Belal.png";
 import Search from "./Search/Search";
 
 function Megatron() {
