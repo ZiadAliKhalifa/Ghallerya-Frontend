@@ -72,13 +72,22 @@ const Navbar: React.FC<NavbarProps> = () => {
   const hamburgerMenuHandler = () => {
     switch (isHamburgerOpen) {
       case hamburgerState.initial:
+        //for safari
+        document.body.scrollTop = 0;
+        //for chrome and firefox
+        document.documentElement.scrollTop = 0;
         setIsHamburgerOpen(hamburgerState.closed);
         break;
       case hamburgerState.opened:
+        //for safari
+        document.body.scrollTop = 0;
+        //for chrome and firefox
+        document.documentElement.scrollTop = 0;
         setIsHamburgerOpen(hamburgerState.closed);
         break;
       case hamburgerState.closed:
         setIsHamburgerOpen(hamburgerState.opened);
+
         break;
     }
   };
