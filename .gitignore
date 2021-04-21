@@ -41,4 +41,7 @@ sketch
 #env
 .env*
 
+#vs-code
+launch.json
+
 
