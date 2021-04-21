@@ -50,10 +50,7 @@
 
 @media only screen and (max-width: 730px) {
   .megatron h1 {
-    width: 256px;
-    top: 220px;
-    font-size: 50px;
-    font-weight: 800;
+    display: none;
   }
   .megatron h4 {
     width: 70%;

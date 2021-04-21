@@ -30,6 +30,9 @@
     .image-area {
         grid-template-columns: repeat(auto-fit, 400px);
     }
+    .extra {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 500px) {
