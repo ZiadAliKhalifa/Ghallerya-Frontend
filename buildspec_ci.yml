@@ -3,6 +3,7 @@ env:
   secrets-manager:
     REACT_APP_AUTH0_DOMAIN: "arn:aws:secretsmanager:us-east-1:703272952572:secret:hedwig/dev-n5el2b:REACT_APP_AUTH0_DOMAIN"
     REACT_APP_AUTH0_CLIENT_ID: "arn:aws:secretsmanager:us-east-1:703272952572:secret:hedwig/dev-n5el2b:REACT_APP_AUTH0_CLIENT_ID"
+    REACT_APP_PEXELS_API_KEY: "arn:aws:secretsmanager:us-east-1:703272952572:secret:hedwig/dev-n5el2b:REACT_APP_PEXELS_API_KEY"
 phases:
   install:
     commands:
