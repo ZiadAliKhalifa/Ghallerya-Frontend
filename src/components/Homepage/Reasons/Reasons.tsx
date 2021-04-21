@@ -6,7 +6,7 @@ import "./Reasons.css"
 const Reasons = () => {
     return (
         <div className="reasons">
-            <h1>Why use Ghallerya</h1>
+            <span className="header">Why use Ghallerya</span>
             <div className="image-area">
                 <div className="image-wrapper">
                     <img src={photographer} alt="Illustration of a girl seeing a flower through her camera lens" />

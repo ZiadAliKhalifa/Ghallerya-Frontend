@@ -1,0 +1,39 @@
+.featured-pics {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-grid {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-area {
+    display: grid;
+    justify-content: center;
+    grid-gap: 8px;
+    grid-template-columns: repeat(auto-fit, 468px);
+    padding: 10px;
+    width: 100%;
+}
+
+.featured-pic {
+    background-color: grey;
+    height: 310px;
+}
+
+@media only screen and (max-width: 960px) {
+    .featured-pics {
+        align-items: center;
+    }
+    .featured-pic {
+        margin-bottom: 25px;
+    }
+    .extra {
+        display: none;
+    }
+}

@@ -1,0 +1,11 @@
+* {
+    font-family: 'Raleway';
+}
+
+.header {
+    font-weight: 400;
+    font-size: 35px;
+    margin: 72px 0;
+    align-content: center;
+    text-align: center;
+}
