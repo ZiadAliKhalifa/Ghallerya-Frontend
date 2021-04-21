@@ -8,7 +8,7 @@ function Megatron() {
   return (
     <div className="megatron" data-testid="megatron">
       <img src={Belal} alt="An old guy smilling" />
-      <span>Find the perfect image</span>
+      <h1>Find the perfect image</h1>
       <h4>The largest middle eastern oriented stock gallery</h4>
       <Search />
     </div>
