@@ -24,18 +24,21 @@
 .featured-pic {
     background-color: grey;
     height: 280px;
+    width: 99%;
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 960px) {
     .image-area {
         grid-template-columns: repeat(auto-fit, 400px);
+        width: 95%;
     }
     .extra {
         display: none;
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 830px) {
     .image-area {
         grid-template-columns: repeat(auto-fit, 370px);
     }

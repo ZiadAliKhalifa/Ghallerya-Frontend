@@ -1,8 +1,10 @@
-import { UserActionType } from "./actionTypes";
+import { UserActionType, FeaturedImageActionType } from "./actionTypes";
+
 
 interface IRootState {
-    user: UserState
+    user: UserState,
+    featuredImages: FeatureImagesState
 }
 
 // Add other collective action types as they appear
-type AppActionType = UserActionType
+type AppActionType = UserActionType | FeaturedImageActionType
