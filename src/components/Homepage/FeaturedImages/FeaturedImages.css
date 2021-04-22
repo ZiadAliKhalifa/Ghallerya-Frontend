@@ -23,17 +23,20 @@
 
 .featured-pic {
     background-color: grey;
-    height: 310px;
+    height: 280px;
 }
 
 @media only screen and (max-width: 960px) {
-    .featured-pics {
-        align-items: center;
-    }
-    .featured-pic {
-        margin-bottom: 25px;
+    .image-area {
+        grid-template-columns: repeat(auto-fit, 400px);
     }
     .extra {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .image-area {
+        grid-template-columns: repeat(auto-fit, 370px);
     }
 }

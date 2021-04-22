@@ -17,7 +17,7 @@
 .search i {
   position: absolute;
   color: gray;
-  top: 17px;
+  top: 20px;
   right: 23px;
 }
 
@@ -58,5 +58,8 @@
     transform: translate(-50%, -50%);
     width: 80%;
     height: 50px;
+  }
+  ::placeholder {
+    font-size: small;
   }
 }
