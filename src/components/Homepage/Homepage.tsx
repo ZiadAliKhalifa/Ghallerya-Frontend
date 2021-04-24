@@ -1,8 +1,9 @@
 import Megatron from "./Megatron/Megatron";
 import Navbar from "../Navbar/Navbar";
 import Reasons from "./Reasons/Reasons";
-import "./Homepage.css"
+import "./Homepage.css";
 import FeaturedImages from "./FeaturedImages/FeaturedImages";
+import PhotoCollections from "./PhotoCollections/PhotoCollections";
 
 export default function Homepage() {
   return (
@@ -11,6 +12,7 @@ export default function Homepage() {
       <Megatron />
       <FeaturedImages />
       <Reasons />
+      <PhotoCollections />
       <br />
       <br />
       <br />

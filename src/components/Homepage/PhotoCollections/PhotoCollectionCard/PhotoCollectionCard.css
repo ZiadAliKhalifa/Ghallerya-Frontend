@@ -1,0 +1,17 @@
+.photo-collection-card-image {
+  width: calc(24.5vw * 0.805);
+  height: calc(24.5vw * 0.805);
+  object-fit: cover;
+  object-position: 0rem 25%;
+  filter: brightness(90%);
+}
+
+.photo-collection-card-text {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  text-align: right;
+  color: white;
+  font-size: calc(24.5vw * 0.805 * 0.12);
+  text-transform: capitalize;
+}
