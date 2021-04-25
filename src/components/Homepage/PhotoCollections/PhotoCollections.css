@@ -37,37 +37,15 @@
 
   .photo-collection-grid-container {
     display: grid;
-    grid-template-columns: 49% 49%;
-    background: red;
-  }
-
-  .photo-collection-grid-item {
-    width: calc(49vw * 0.805);
-    height: calc(49vw * 0.805);
-    position: relative;
-    background: teal;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .photo-collection-heading {
-    font-size: 3.5rem;
-    width: 80%;
+    grid-template-columns: 50% 50%;
+    width: 98%;
+    grid-gap: 0.5rem 0.5rem;
     margin: auto;
   }
 
-  .photo-collection-grid-container {
-    display: grid;
-    grid-template-columns: 100%;
-    width: 80.5%;
-    background: orange;
-    grid-gap: 1.5rem 0rem;
-  }
-
   .photo-collection-grid-item {
-    width: calc(100vw * 0.805);
-    height: calc(98vw * 0.805);
+    width: calc(50vw * 0.98);
+    height: calc(50vw * 0.98);
     position: relative;
-    background: teal;
   }
 }

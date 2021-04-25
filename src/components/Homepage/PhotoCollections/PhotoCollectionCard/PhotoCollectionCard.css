@@ -1,6 +1,6 @@
 .photo-collection-card-image {
-  width: calc(24.5vw * 0.805);
-  height: calc(24.5vw * 0.805);
+  width: calc(24.5vw * 0.98);
+  height: calc(24.5vw * 0.98);
   object-fit: cover;
   object-position: 0rem 25%;
   filter: brightness(90%);
@@ -12,28 +12,17 @@
   right: 5%;
   text-align: right;
   color: white;
-  font-size: calc(24.5vw * 0.805 * 0.12);
+  font-size: calc(24.5vw * 0.98 * 0.12);
   text-transform: capitalize;
 }
 
 @media only screen and (max-width: 960px) {
   .photo-collection-card-image {
-    width: calc(49vw * 0.805);
-    height: calc(49vw * 0.805);
+    width: calc(50vw * 0.98);
+    height: calc(50vw * 0.98);
   }
 
   .photo-collection-card-text {
-    font-size: calc(49vw * 0.805 * 0.12);
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .photo-collection-card-image {
-    width: calc(100vw * 0.805);
-    height: calc(98vw * 0.805);
-  }
-
-  .photo-collection-card-text {
-    font-size: calc(98vw * 0.805 * 0.12);
+    font-size: calc(50vw * 0.98 * 0.12);
   }
 }
