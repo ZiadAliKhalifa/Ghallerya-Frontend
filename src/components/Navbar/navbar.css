@@ -222,7 +222,6 @@ nav {
     color: black;
     width: 100%;
     margin: auto;
-    /* background-color: rebeccapurple; */
     justify-content: space-between;
     z-index: 1;
   }
@@ -260,7 +259,6 @@ nav {
     position: absolute;
     opacity: 0;
     z-index: 6;
-    background: red;
   }
   .menu-icon div {
     margin: auto;

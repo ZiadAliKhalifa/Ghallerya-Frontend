@@ -18,11 +18,11 @@
 
 @media only screen and (max-width: 960px) {
   .photo-collection-card-image {
-    width: calc(50vw * 0.98);
-    height: calc(50vw * 0.98);
+    width: calc(50vw * 0.94);
+    height: calc(50vw * 0.94);
   }
 
   .photo-collection-card-text {
-    font-size: calc(50vw * 0.98 * 0.12);
+    font-size: calc(50vw * 0.94 * 0.12);
   }
 }
