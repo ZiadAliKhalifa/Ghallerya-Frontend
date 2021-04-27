@@ -4,15 +4,6 @@
   margin-top: 8rem;
 }
 
-.photo-collection-heading {
-  font-weight: 200;
-  font-size: 4rem;
-  text-align: center;
-  text-transform: uppercase;
-  padding-top: 6.4rem;
-  padding-bottom: 7.7rem;
-}
-
 .photo-collection-grid-container {
   display: grid;
   grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
@@ -44,8 +35,8 @@
   }
 
   .photo-collection-grid-item {
-    width: calc(50vw * 0.98);
-    height: calc(50vw * 0.98);
+    width: calc(50vw * 0.94);
+    height: calc(50vw * 0.94);
     position: relative;
   }
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./PhotoCollections.css";
+// import "../Homepage.css";
 import city from "../../../static/images/Homepage/city.jpg";
 import nature from "../../../static/images/Homepage/nature.jpg";
 import fitness from "../../../static/images/Homepage/fitness.jpg";
@@ -26,9 +27,7 @@ const PhotoCollections: React.FC<PhotoCollectionsProps> = () => {
 
   return (
     <div className="photo-collection-container">
-      <div className="photo-collection-heading">
-        high resolution photo collections
-      </div>
+      <div className="header">high resolution photo collections</div>
       <div className="photo-collection-grid-container">
         {images.map((image, index) => (
           <div className="photo-collection-grid-item" key={index}>
