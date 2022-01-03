@@ -1,0 +1,27 @@
+name: filter-test
+# Runs the validator on all filters in production
+
+on: [pull_request]
+
+jobs:
+  check-current-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hi there 🎉"
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+  check-another-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo " Trying to clone a different repo 👀"
+      - name: Check out another repository
+        uses: actions/checkout@v2
+        with:
+          repository: "ZiadAliKhalifa/zanobia-demo-frontend"
+          ref: "main"
+          token: ${{ github.token }}
