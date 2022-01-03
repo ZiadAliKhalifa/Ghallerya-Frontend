@@ -24,4 +24,4 @@ jobs:
         with:
           repository: "ZiadAliKhalifa/zanobia-demo-frontend"
           ref: "main"
-          token: ${{ github.token }}
+          token: ${{ secrets.ACCESS_TOKEN }}
